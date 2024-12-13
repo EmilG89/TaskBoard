@@ -34,7 +34,6 @@ cancelButton.addEventListener('click', (event) => {
     createTaskModal.style.display = 'none';
     newTaskForm.style.display = 'none';
     message.innerHTML = '';
-    console.log('cancel');
 });
 
 // Listen if add data is clicked
@@ -119,7 +118,6 @@ function updateLocalStorage() {
     // Lopp through pair of task child elements that hold header, header description 
     // and color in which task contaoner should be colored
     for (let i = 0; i < taskElements.length; i+=2) {
-        console.log(taskElements[i].style.backgroundColor);
         taskArray.push({
             color: taskElements[i].style.backgroundColor,
             header: taskElements[i].innerText,
