@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +15,14 @@
         <main id="backgroud">
             <div id="createTaskModal">
                 <div id="newTaskForm">
+                    <div style="width: 100%">
+                    <label for="Header" style="display: inline-block"><h3>Header: </h3></label>
+                    <input id="headerInput" name="Header" style="display: inline-block">
+                    </div>
                     <p id="message"></p>
-                    <label><h3>Header: <input id="headerInput"></h3></label>
-                    <label><h4>Description:</h4><textarea id="descriptionInput" rows="10"></textarea></label>
-                    <button id="addTask">Add</button>
+                    <label for="Description"><h4>Description:</h4></label>
+                    <textarea id="descriptionInput" rows="10" name="Description"></textarea>
+                    <button type="submit" id="addTask">Add</button>
                     <button id="cancel">Cancel</button>
                 </div>
             </div>

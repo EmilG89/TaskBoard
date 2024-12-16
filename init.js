@@ -40,18 +40,27 @@ cancelButton.addEventListener('click', (event) => {
 addTaskButton.addEventListener('click', (event) => {
     event.preventDefault();
     message.innerHTML = '';
-    // check if both fields are filled else throw warning
-    try{
-        if (headerInput.value == '') throw 'header is required';
-        if (descriptionInput.value == '') throw 'description is required';
-        createTaskModal.style.display = 'none';
-        newTaskForm.style.display = 'none';
-        addTask();
+    // Create directory taht holds required field objects with properties
+    let requiredFields = {
+        header: {
+            value: headerInput.value,
+            length: 4
+        },
+        description: {
+            value: descriptionInput.value,
+            length: 12
+        }
+    };
+    // Loop through required input fields and check if input is valid
+    for (let key in requiredFields) {
+        if (requiredFields[key].value.length < requiredFields[key].length) {
+            message.innerHTML = key + ` must have at least ${requiredFields[key].length} symbols!`;
+            return;
+        }
     }
-    catch (err) {
-        message.innerHTML = err;
-        message.style.color = 'red';
-    }
+    createTaskModal.style.display = 'none';
+    newTaskForm.style.display = 'none';
+    addTask();
 });
 
 // function for adding task from user input and from local storage

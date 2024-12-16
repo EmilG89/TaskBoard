@@ -56,6 +56,13 @@ main {
     padding: 20px;
     box-shadow: 2px 2px 5px black;
 }
+/* Warning message if input is invalid*/
+#message {
+    float: right;
+    contain: content;
+    color:red;
+}
+
 /* task description input field */
 textarea {
     width: 100%;
@@ -122,14 +129,12 @@ textarea {
     transition: all 0.5s;
 }
 .task:hover > button {
-    left: 155px;
-    bottom: -25px;
     opacity: 1;
+    transform: translate(-25px, -25px);
 }
 .task > button:hover {
     background-color: indianred;
     cursor: pointer;
     box-shadow: 0 0 7px indianred;
-    left: 145px;
-    bottom: -15px;
+    transform: translate(-35px, -35px);
 }
